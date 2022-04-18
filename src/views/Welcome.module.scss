@@ -1,0 +1,24 @@
+.wrapper{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    > header{
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 66px;
+      color: #60A3BC;
+      > img {
+        width: 56px;
+        height: 56px;
+      }
+    }
+    > main{
+      flex-grow: 1;
+    }
+    > footer{
+      flex-shrink: 0;
+    }
+  }
