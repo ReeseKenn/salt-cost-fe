@@ -1,8 +1,9 @@
-.wrapper{
+.wrapper {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  > .card{
+
+  > .card {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -14,19 +15,25 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    height: 400px;
+
     > h2 {
       margin-top: 40px;
-      color: #60A3BC;
+      color: var(--welcome-text);
     }
   }
-  > .actions{
+
+  > .actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0 16px;
     font-size: 32px;
     padding: 24px 0;
     color: var(--welcome-text);
-    > .fake{visibility: hidden;}
+
+    > .fake {
+      visibility: hidden;
+    }
   }
 }
