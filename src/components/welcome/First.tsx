@@ -13,10 +13,10 @@ export const First = defineComponent({
           <h2>随时随地，想记就记</h2>
         </div>
         <div class={s.actions}>
-          <RouterLink to="/start"><img src={divide} style="color:0A3D62;width: 36px;" /></RouterLink>
+          <RouterLink to="/welcome/1"><img src={divide} style="color:0A3D62;width: 36px;" /></RouterLink>
           <RouterLink to="/welcome/2"><img src={divide} style="width: 36px;" /></RouterLink>
-          <RouterLink to="/start"><img src={divide} style="width: 36px;" /></RouterLink>
-          <RouterLink to="/start"><img src={divide} style="width: 36px;" /></RouterLink>
+          <RouterLink to="/welcome/3"><img src={divide} style="width: 36px;" /></RouterLink>
+          <RouterLink to="/welcome/4"><img src={divide} style="width: 36px;" /></RouterLink>
         </div>
       </div>
     )
