@@ -1,15 +1,12 @@
 import { FunctionalComponent } from 'vue';
 import pig from '../../assets/icons/pig.svg';
-import s from './WelcomLayout.module.scss';
-import { WelcomeLayout } from "./WelcomeLayout";
+import s from './welcome.module.scss';
 
 export const First: FunctionalComponent = () => {
-  return <WelcomeLayout>
-    {{
-      icon: () => <img src={pig} alt="pig" class={s.icon} />,
-      title: () => <h2>随时随地，想记就记</h2>
-    }}
-  </WelcomeLayout>
+  return <div class={s.card}>
+    <img src={pig} />
+    <h2>随时随地，想记就记</h2>
+  </div>
 }
 
 First.displayName = 'First';
