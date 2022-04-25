@@ -39,9 +39,8 @@
 
       svg {
         width: 36px;
+        height: 36px;
         fill: var(--welcome-text);
-
-
       }
 
 
@@ -51,7 +50,7 @@
 }
 
 .active {
-  fill: red !important;
+  fill: var(--action-active-text) !important;
 }
 
 .button {

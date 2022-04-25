@@ -41,17 +41,17 @@ export const Welcome = defineComponent({
             </svg>
           </RouterLink>
           <RouterLink to="/welcome/2">
-            <svg class={router.currentRoute.value.path === '/welcome/2' ? 'active' : ''}>
+            <svg class={router.currentRoute.value.path === '/welcome/2' ? s.active : ''}>
               <use xlinkHref='#divide' />
             </svg>
           </RouterLink>
           <RouterLink to="/welcome/3">
-            <svg class={router.currentRoute.value.path === '/welcome/3' ? 'active' : ''}>
+            <svg class={router.currentRoute.value.path === '/welcome/3' ? s.active : ''}>
               <use xlinkHref='#divide' />
             </svg>
           </RouterLink>
           <RouterLink to="/welcome/4">
-            <svg class={router.currentRoute.value.path === '/welcome/4' ? 'active' : ''}>
+            <svg class={router.currentRoute.value.path === '/welcome/4' ? s.active : ''}>
               <use xlinkHref='#divide' />
             </svg>
           </RouterLink>
