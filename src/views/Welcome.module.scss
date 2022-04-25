@@ -40,11 +40,18 @@
       svg {
         width: 36px;
         fill: var(--welcome-text);
+
+
       }
+
 
     }
   }
 
+}
+
+.active {
+  fill: red !important;
 }
 
 .button {

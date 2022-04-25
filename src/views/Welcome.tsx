@@ -36,22 +36,22 @@ export const Welcome = defineComponent({
 
         <div class={s.actions}>
           <RouterLink to="/welcome/1">
-            <svg>
+            <svg class={router.currentRoute.value.path === '/welcome/1' ? s.active : ''}>
               <use xlinkHref='#divide' />
             </svg>
           </RouterLink>
           <RouterLink to="/welcome/2">
-            <svg>
+            <svg class={router.currentRoute.value.path === '/welcome/2' ? 'active' : ''}>
               <use xlinkHref='#divide' />
             </svg>
           </RouterLink>
           <RouterLink to="/welcome/3">
-            <svg>
+            <svg class={router.currentRoute.value.path === '/welcome/3' ? 'active' : ''}>
               <use xlinkHref='#divide' />
             </svg>
           </RouterLink>
           <RouterLink to="/welcome/4">
-            <svg>
+            <svg class={router.currentRoute.value.path === '/welcome/4' ? 'active' : ''}>
               <use xlinkHref='#divide' />
             </svg>
           </RouterLink>
