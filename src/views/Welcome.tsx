@@ -1,7 +1,6 @@
 import { defineComponent, h, Transition, VNode } from 'vue';
 import { RouteLocationNormalizedLoaded, RouterLink, RouterView, useRouter } from 'vue-router';
 import s from './Welcome.module.scss'
-import logo from '../assets/icons/salt.svg'
 import divide from "../assets/icons/divide.svg";
 import { Button } from "../shared/Button";
 
@@ -15,7 +14,9 @@ export const Welcome = defineComponent({
     })
     return () => <div class={s.wrapper}>
       <header>
-        <img src={logo} />
+        <svg>
+          <use xlinkHref='#salt' />
+        </svg>
         <h2>海盐账本</h2>
       </header>
       <main class={s.main}>
