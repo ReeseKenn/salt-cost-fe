@@ -37,6 +37,11 @@
       padding: 16px 0;
       color: var(--welcome-text);
 
+      svg {
+        width: 36px;
+        fill: var(--welcome-text);
+      }
+
     }
   }
 

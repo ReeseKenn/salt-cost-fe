@@ -35,10 +35,26 @@ export const Welcome = defineComponent({
       <footer>
 
         <div class={s.actions}>
-          <RouterLink to="/welcome/1"><img src={divide} style="width: 36px;" /></RouterLink>
-          <RouterLink to="/welcome/2"><img src={divide} style="width: 36px;" /></RouterLink>
-          <RouterLink to="/welcome/3"><img src={divide} style="width: 36px;" /></RouterLink>
-          <RouterLink to="/welcome/4"><img src={divide} style="width: 36px;" /></RouterLink>
+          <RouterLink to="/welcome/1">
+            <svg>
+              <use xlinkHref='#divide' />
+            </svg>
+          </RouterLink>
+          <RouterLink to="/welcome/2">
+            <svg>
+              <use xlinkHref='#divide' />
+            </svg>
+          </RouterLink>
+          <RouterLink to="/welcome/3">
+            <svg>
+              <use xlinkHref='#divide' />
+            </svg>
+          </RouterLink>
+          <RouterLink to="/welcome/4">
+            <svg>
+              <use xlinkHref='#divide' />
+            </svg>
+          </RouterLink>
         </div>
         {/*如果当前路由是/welcome/4,展示button*/}
         {router.currentRoute.value.path === '/welcome/4' &&
