@@ -1,11 +1,11 @@
-import { defineComponent, h, Transition, VNode } from 'vue';
+import { defineComponent, ref, Transition, VNode } from 'vue';
 import { RouteLocationNormalizedLoaded, RouterLink, RouterView, useRouter } from 'vue-router';
 import s from './Welcome.module.scss'
-import divide from "../assets/icons/divide.svg";
 import { Button } from "../shared/Button";
 
 export const Welcome = defineComponent({
   setup: (props, context) => {
+    const main = ref<HTMLElement>()
     const router = useRouter()
     let currentRoute = router.currentRoute.value.path
     // 监听路由变化
@@ -19,7 +19,7 @@ export const Welcome = defineComponent({
         </svg>
         <h2>海盐账本</h2>
       </header>
-      <main class={s.main}>
+      <main class={s.main} ref={main}>
         <RouterView>
           {({Component: X, route: R}: { Component: VNode, route: RouteLocationNormalizedLoaded }) =>
             <Transition
