@@ -3,7 +3,8 @@ import s from './Icon.module.scss';
 export const Icon = defineComponent({
   props: {
     name: {
-      type: String
+      type: String,
+      required: true
     }
   },
   setup: (props, context) => {
