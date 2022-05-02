@@ -6,9 +6,16 @@
 }
 
 .pig_wrapper{
-  padding: 160px 0;
+  padding: 120px 0;
   .pig{
     width: 128px;
     height: 128px;
   }
+}
+
+.nav .navIcon{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 2px;
 }
