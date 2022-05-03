@@ -6,7 +6,7 @@ import {Third} from "../components/welcome/Third";
 import {Welcome} from "../views/Welcome";
 import {StartPage} from "../views/StartPage";
 import {ItemPage} from "../views/ItemPage";
-import {ItemsList} from "../components/items/ItemList";
+import {ItemList} from "../components/items/ItemList";
 import {ItemCreate} from "../components/items/ItemCreate";
 
 export const routes: RouteRecordRaw[] = [
@@ -26,7 +26,7 @@ export const routes: RouteRecordRaw[] = [
   {
     path: '/items', component: ItemPage,
     children: [
-      {path: '', component: ItemsList, name: 'ItemsList'},
+      {path: '', component: ItemList, name: 'ItemsList'},
       {path: 'create', component: ItemCreate, name: 'ItemCreate'},
     ]
   }
