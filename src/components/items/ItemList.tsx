@@ -1,6 +1,6 @@
 import { defineComponent, PropType } from 'vue';
-import s from './ItemsList.module.scss';
-export const ItemsList = defineComponent({
+import s from './ItemList.module.scss';
+export const ItemList = defineComponent({
   props: {
     name: {
       type: String as PropType<string>
@@ -8,7 +8,7 @@ export const ItemsList = defineComponent({
   },
   setup: (props, context) => {
     return () => (
-      <div class={s.wrapper}>ItemsList</div>
+      <div class={s.wrapper}>ItemList</div>
     )
   }
 })
