@@ -1,8 +1,9 @@
-import { defineComponent, PropType, ref } from 'vue';
-import { Icon } from '../../shared/Icon';
-import { time } from '../../shared/time';
+import {defineComponent, PropType, ref} from 'vue';
+import {Icon} from '../../shared/Icon';
+import {time} from '../../shared/time';
 import s from './InputPad.module.scss';
-import { DatetimePicker, Popup } from 'vant';
+import {DatetimePicker, Popup,} from 'vant';
+
 export const InputPad = defineComponent({
   props: {
     name: {
@@ -54,14 +55,43 @@ export const InputPad = defineComponent({
       { text: '提交', onClick: () => { } },
     ]
     const refDatePickerVisible = ref(false)
+    const refMemoVisible = ref(false)
     const showDatePicker = () => refDatePickerVisible.value = true
     const hideDatePicker = () => refDatePickerVisible.value = false
-    const setDate = (date: Date) => { refDate.value = date; hideDatePicker() }
+    const setDate = (date: Date) => {
+      refDate.value = date;
+      hideDatePicker()
+    }
     const refAmount = ref('0')
+    const refTempMemo = ref()
+    const refMemo = ref()
+    const confirmMemo = () => {
+      refMemo.value = refTempMemo.value
+      hideMemo()
+    }
+    const showMemo = () => {
+      refMemoVisible.value = true
+      refTempMemo.value = refMemo.value
+    }
+    const hideMemo = () => refMemoVisible.value = false
     return () => <>
+      <Popup position='bottom' v-model:show={refMemoVisible.value}>
+        <div class={s.memo}>
+          <div class={s.memoButton}>
+            <button type="button" onClick={hideMemo}>取消</button>
+            <button type="button" class={s.memoButton_confirm} onClick={confirmMemo}>确认</button>
+          </div>
+          <div class={s.memoTitle}>备注</div>
+          <div class={s.memoContent}>
+            <textarea class={s.memoTextarea} v-model={refTempMemo.value}/>
+          </div>
+        </div>
+      </Popup>
+
       <div class={s.dateAndAmount}>
         <span class={s.date}>
-          <Icon name="date" class={s.icon} />
+          <div onClick={showMemo}><Icon name="memo" class={s.iconMemo}/></div>
+          <Icon name="date" class={s.icon}/>
           <span>
             <span onClick={showDatePicker}>{time(refDate.value).format()}</span>
             <Popup position='bottom' v-model:show={refDatePickerVisible.value}>

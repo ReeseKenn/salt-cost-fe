@@ -1,5 +1,6 @@
 .wrapper {
 }
+
 .dateAndAmount {
   display: flex;
   justify-content: space-between;
@@ -7,24 +8,33 @@
   padding: 16px;
   font-family: monospace;
   border-top: 1px solid var(--button-border-color);
+
   > .date {
     font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: start;
     color: var(--date-text);
+
     .icon {
       width: 24px;
       height: 24px;
       margin-right: 8px;
-      fill: var(--amount-text);
+    }
+
+    .iconMemo {
+      width: 21px;
+      height: 21px;
+      margin-right: 8px;
     }
   }
+
   > .amount {
     font-size: 20px;
     color: var(--amount-text);
   }
 }
+
 .buttons {
   display: grid;
   grid-template-areas:
@@ -38,49 +48,89 @@
   flex-wrap: wrap;
   background: var(--button-border-color);
   border-top: 1px solid var(--button-border-color);
+
   > button {
     border: none;
     background: var(--inputPad-button-bg);
+
     &:nth-child(1) {
       grid-area: n1;
     }
+
     &:nth-child(2) {
       grid-area: n2;
     }
+
     &:nth-child(3) {
       grid-area: n3;
     }
+
     &:nth-child(4) {
       grid-area: n4;
     }
+
     &:nth-child(5) {
       grid-area: n5;
     }
+
     &:nth-child(6) {
       grid-area: n6;
     }
+
     &:nth-child(7) {
       grid-area: n7;
     }
+
     &:nth-child(8) {
       grid-area: n8;
     }
+
     &:nth-child(9) {
       grid-area: n9;
     }
+
     &:nth-child(10) {
       grid-area: nd;
     }
+
     &:nth-child(11) {
       grid-area: n0;
     }
+
     &:nth-child(12) {
       grid-area: d;
     }
+
     &:nth-child(13) {
       grid-area: s;
       background: var(--button-bg-important);
       color: var(--button-text-important);
     }
+  }
+}
+
+.memo {
+  height: 255px;
+  padding: 0 16px;
+  .memoButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--toolbar-height);
+
+    > button {
+      height: 100%;
+      font-size: 14px;
+      background-color: transparent;
+      border: none;
+    }
+
+    &_confirm {
+      color: var(--toolbar-confirm-color);
+    }
+  }
+
+  .memoTextarea {
+    width: 100%;
   }
 }
