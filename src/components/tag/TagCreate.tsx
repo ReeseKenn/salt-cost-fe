@@ -1,9 +1,10 @@
-import {defineComponent, PropType} from 'vue';
+import {defineComponent, PropType, reactive} from 'vue';
 import s from './TagCreate.module.scss';
 import {MainLayout} from "../../layouts/MainLayout";
 import {Icon} from "../../shared/Icon";
 import {RouterLink} from "vue-router";
-import { Button } from '../../shared/Button';
+import {Button} from '../../shared/Button';
+import {EmojiSelect} from "../../shared/EmojiSelect";
 
 export const TagCreate = defineComponent({
   props: {
@@ -12,6 +13,10 @@ export const TagCreate = defineComponent({
     }
   },
   setup: (props, context) => {
+    const formData = reactive({
+      name: '',
+      sign: ''
+    })
     return () => (
       <MainLayout>{{
         title: () => '新建标签',
@@ -22,7 +27,7 @@ export const TagCreate = defineComponent({
               <label class={s.formLabel}>
                 <span class={s.formItem_name}>标签名</span>
                 <div class={s.formItem_value}>
-                  <input class={[s.formItem,s.input,s.error]}/>
+                  <input v-model={formData.name} class={[s.formItem, s.input, s.error]}/>
                 </div>
                 <div class={s.formItem_errorHint}>
                   <span>必填</span>
@@ -33,131 +38,11 @@ export const TagCreate = defineComponent({
               <label class={s.formLabel}>
                 <span class={s.formItem_name}>符号</span>
                 <div class={s.formItem_value}>
-                  <div class={[s.formItem,s.emojiList,s.error]}>
-                    <nav>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                      <span>表情</span>
-                    </nav>
-                    <ol>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                      <li>😀</li>
-                    </ol>
-                  </div>
-                  
+                  <EmojiSelect class={[s.formItem, s.emojiList, s.error]} />
                 </div>
                 <div class={s.formItem_errorHint}>
-                    <span>必填</span>
-                  </div>
+                  <span>必填</span>
+                </div>
               </label>
             </div>
             <p class={s.tips}>记账时长按标签即可进行编辑</p>
@@ -166,7 +51,7 @@ export const TagCreate = defineComponent({
                 <Button class={[s.formItem, s.button]}>确定</Button>
               </div>
             </div>
-            
+
           </form>
         )
       }}</MainLayout>
