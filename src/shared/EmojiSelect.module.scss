@@ -31,7 +31,7 @@
     font-size: 22px;
     height: calc(32px*12);
     overflow: auto;
-    padding: 0 4px;
+    padding: 1px 4px;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -40,6 +40,10 @@
       flex-grow: 0;
       width: 10%;
       text-align: center;
+      &.selectedEmoji{
+        outline: 1px solid var(--defalut-color);
+        border-radius: 3px;
+      }
     }
   }
 }
