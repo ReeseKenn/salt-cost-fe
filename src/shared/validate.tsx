@@ -27,7 +27,7 @@ export const validate = <T extends FData>(fromData: T, rules: Rules<T>) => {
         break;
       case 'pattern':
         const isEmpty = value === null || value === undefined || value === ''
-        if(!isEmpty && !rule.regex.test(value.toString())){
+        if(!isEmpty && !rule.regex.test(value!.toString())){
           errors[key] = errors[key] ?? []
           errors[key]?.push(message)
         }
