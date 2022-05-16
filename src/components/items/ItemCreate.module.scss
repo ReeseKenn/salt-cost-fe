@@ -1,6 +1,45 @@
+.tabs{
+  margin-bottom: calc(48px * 4 + 57px);
+}
 .inputPad_wrapper {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
+}
+.tags_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 16px;
+}
+.createTag{
+  fill: var(--defalut-color);
+}
+.tag{
+  position: relative;
+  width: 20vw;
+  height: calc(20vw * 1.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .sign{
+    width:12vw;
+    height:12vw;
+    background-color: var( --inputPad-button-bg);
+    border: 1px solid var(--defalut-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .name{
+      font-size: 12px;
+      margin-top: 4px;
+    }
+    &.selected{
+      .sign{
+        border-color: 1px solid var(--defalut-color);
+      }
+    }
+
+  }
 }
