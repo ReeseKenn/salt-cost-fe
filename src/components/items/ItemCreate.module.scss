@@ -1,10 +1,16 @@
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 88px);
+}
 .tabs{
-  margin-bottom: calc(48px * 4 + 57px);
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: auto;
 }
 .inputPad_wrapper {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
   width: 100%;
 }
 .tags_wrapper {
