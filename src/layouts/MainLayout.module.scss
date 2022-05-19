@@ -1,6 +1,14 @@
-.nav svg{
+.navbar svg{
   width: 30px;
   height: 30px;
   position: relative;
   top: 2px;
+}
+
+.wrapper {
+  position: relative;
+  .navbar {
+    position: sticky;
+    top: 0;
+  }
 }
