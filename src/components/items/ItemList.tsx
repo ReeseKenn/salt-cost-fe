@@ -37,7 +37,7 @@ export const ItemList = defineComponent({
     return () => (
       <MainLayout>{
         {
-          title: () => '山竹记账',
+          title: () => '海盐记账',
           icon: () => <Icon name="menu" />,
           default: () => <>
             <Tabs classPrefix={'customTabs'} v-model:selected={refSelected.value}>
