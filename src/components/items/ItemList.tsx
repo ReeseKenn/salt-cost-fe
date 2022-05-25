@@ -1,5 +1,5 @@
 import { Overlay } from 'vant';
-import {defineComponent, reactive, ref, watchEffect} from 'vue';
+import {defineComponent, reactive, ref} from 'vue';
 import { MainLayout } from '../../layouts/MainLayout';
 import { Icon } from '../../shared/Icon';
 import { Tab, Tabs } from '../../shared/Tabs';
@@ -29,15 +29,15 @@ export const ItemList = defineComponent({
         end: time.lastDayOfYear()
       }
     ]
-    watchEffect(() => {
-      if (refSelected.value === '自定义时间') {
-        refOverlayVisible.value = true
-      }
-    })
     const refOverlayVisible = ref(false)
     const onSubmitCustomTime = (e: Event) => {
       e.preventDefault()
       refOverlayVisible.value = false
+    }
+    const onSelect = (value: string) => {
+      if(value ==='自定义时间'){
+        refOverlayVisible.value = true
+      }
     }
     return () => (
       <MainLayout>{
@@ -45,7 +45,8 @@ export const ItemList = defineComponent({
           title: () => '海盐记账',
           icon: () => <Icon name="menu" />,
           default: () => <>
-            <Tabs classPrefix={'customTabs'} v-model:selected={refSelected.value}>
+            <Tabs classPrefix={'customTabs'} v-model:selected={refSelected.value}
+                  onUpdate:selected={(name) => onSelect(name)}>
               <Tab name="本月">
                 <ItemSummary
                   startDate={timeList[0].start.format()}
