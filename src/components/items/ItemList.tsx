@@ -1,12 +1,12 @@
 import { Overlay } from 'vant';
 import {defineComponent, reactive, ref} from 'vue';
 import { MainLayout } from '../../layouts/MainLayout';
-import { Icon } from '../../shared/Icon';
 import { Tab, Tabs } from '../../shared/Tabs';
 import s from './ItemList.module.scss';
 import { Time } from '../../shared/time';
 import { ItemSummary } from './ItemSummary';
 import { Form, FormItem } from '../../shared/Form';
+import {OverlayIcon} from "../../shared/Overlay";
 export const ItemList = defineComponent({
   setup: (props, context) => {
     const refSelected = ref('本月')
@@ -43,7 +43,7 @@ export const ItemList = defineComponent({
       <MainLayout>{
         {
           title: () => '海盐记账',
-          icon: () => <Icon name="menu" />,
+          icon: () => <OverlayIcon />,
           default: () => <>
             <Tabs classPrefix={'customTabs'} v-model:selected={refSelected.value}
                   onUpdate:selected={onSelect}>
